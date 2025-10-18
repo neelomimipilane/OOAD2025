@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="LoginController">
+
+    <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="50.0" AnchorPane.bottomAnchor="50.0"
+          AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+
+        <Label text="Welcome to First National Bank" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+
+        <Label text="Customer ID:"/>
+        <TextField fx:id="customerIdField" promptText="Enter Customer ID"/> <!-- Must match exactly -->
+
+        <Label text="Password:"/>
+        <PasswordField fx:id="passwordField" promptText="Enter Password"/> <!-- This one works! -->
+
+        <Button fx:id="loginButton" text="Login" onAction="#handleLogin"/> <!-- Must match exactly -->
+        <Button text="Register" onAction="#handleRegister"/>
+
+    </VBox>
+
+</AnchorPane>

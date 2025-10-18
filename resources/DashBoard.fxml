@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="DashboardController"
+            prefWidth="950" prefHeight="650">
+
+    <!-- MAIN CONTAINER -->
+    <VBox fx:id="mainContainer" spacing="12" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0">
+
+        <padding>
+            <Insets top="16" right="16" bottom="16" left="16"/>
+        </padding>
+
+        <!-- HEADER -->
+        <HBox spacing="10" alignment="CENTER_RIGHT" prefHeight="48" style="-fx-background-color: #0b3d91; -fx-padding: 8;">
+            <Label text="🏦  First National Bank" style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;" HBox.hgrow="ALWAYS"/>
+            <Label fx:id="usernameLabel" text="Welcome, Guest" style="-fx-text-fill: white; -fx-font-size: 13;"/>
+            <Button text="Logout" onAction="#handleLogout" fx:id="logoutBtn" />
+        </HBox>
+
+        <!-- ACCOUNT SUMMARY + SELECTOR -->
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <VBox spacing="6">
+                <Label text="Select Account:"/>
+                <ComboBox fx:id="accountsCombo" prefWidth="320" onAction="#handleAccountSelection"/>
+            </VBox>
+
+            <VBox spacing="6" style="-fx-padding:6;">
+                <Label fx:id="accountNumberLabel" text="Account Number: -"/>
+                <Label fx:id="accountTypeLabel" text="Account Type: -"/>
+                <Label fx:id="balanceLabel" text="Balance: P 0.00" style="-fx-font-weight:bold;"/>
+            </VBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Open New Account" onAction="#handleOpenAccount"/>
+        </HBox>
+
+        <!-- QUICK ACTIONS -->
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Deposit" onAction="#handleDepositFunds" fx:id="depositBtn"/>
+            <Button text="Withdraw" onAction="#handleWithdrawFunds" fx:id="withdrawBtn"/>
+            <Button text="Transfer" onAction="#handleTransferFunds" fx:id="transferBtn"/>
+            <Button text="Pay Monthly Interest" onAction="#handlePayInterest" fx:id="interestBtn"/>
+            <Button text="View All Accounts" onAction="#handleViewAccounts" fx:id="viewAccountsBtn"/>
+        </HBox>
+
+        <!-- RECENT TRANSACTIONS TABLE -->
+        <TitledPane text="Recent Transactions" expanded="true" style="-fx-font-weight: bold; -fx-font-size: 13;" prefHeight="320" prefWidth="900">
+            <TableView fx:id="transactionsTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="dateColumn" text="Date" prefWidth="140"/>
+                    <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="360"/>
+                    <TableColumn fx:id="amountColumn" text="Amount (P)" prefWidth="120"/>
+                    <TableColumn fx:id="typeColumn" text="Type" prefWidth="100"/>
+                    <TableColumn fx:id="balanceColumn" text="Balance (P)" prefWidth="140"/>
+                </columns>
+            </TableView>
+        </TitledPane>
+
+        <Label text="© 2025 First National Bank | All Rights Reserved" style="-fx-font-size: 11; -fx-text-fill: gray;" />
+
+    </VBox>
+
+</AnchorPane>

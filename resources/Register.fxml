@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="RegisterController">
+
+    <!-- Your registration form content here -->
+    <VBox spacing="10" alignment="CENTER" AnchorPane.topAnchor="50.0" AnchorPane.bottomAnchor="50.0"
+          AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+
+        <Label text="Register New Account" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="usernameField" promptText="Username"/>
+        <PasswordField fx:id="passwordField" promptText="Password"/>
+        <TextField fx:id="emailField" promptText="Email"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Register" onAction="#handleRegister"/>
+            <Button text="Back to Login" onAction="#handleBackToLogin"/>
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
