@@ -1,11 +1,39 @@
-# Compiled Java files
+﻿# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
 out/
+production/
+
+# Compiled class files
 *.class
 
-# IDE files
-.idea/
-*.iml
+# Log files
+*.log
 
-# OS files
+# Package Files
+*.jar
+*.war
+*.ear
+
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Build directories
+target/
+build/
+
+# Database files (your text files for persistence - COMMENT THESE OUT if you want to keep your data files)
+# *.txt
+# *.db
+# *.sqlite
+
+# Temporary files
+*.tmp
+*.temp
+
+# System files
+*.orig
+*.bak

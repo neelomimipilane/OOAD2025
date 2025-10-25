@@ -1,0 +1,2 @@
+BUS10549|BUSINESS|Mimi|Pilane|Gaborone|BAC|RXI-1234|Gaborone|neo@gmail.com|2025-10-24 23:31:12
+IND86439|INDIVIDUAL|Mimi|Pilane|Gaborone|2000-01-01|ID1761374712920|neo@gmail.com|2025-10-24 23:45:12
