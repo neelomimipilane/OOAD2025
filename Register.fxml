@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="RegisterController"
+            style="-fx-background-color: linear-gradient(to bottom right, #0f0f23, #1a1a2e, #16213e);">
+
+    <ScrollPane fitToWidth="true"
+                style="-fx-background: transparent; -fx-background-color: transparent;"
+                AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+                AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+        <VBox spacing="20" alignment="CENTER"
+              style="-fx-background-color: rgba(255,255,255,0.05); -fx-background-radius: 15; -fx-padding: 30; -fx-border-color: #00d4ff; -fx-border-width: 1; -fx-border-radius: 15; -fx-min-width: 500;">
+
+            <!-- Header -->
+            <VBox spacing="8" alignment="CENTER">
+                <Label text="First National Bank Botswana"
+                       style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #00d4ff; -fx-effect: dropshadow(gaussian, rgba(0,212,255,0.3), 10, 0.5, 0, 0);"/>
+
+                <Label text="Customer Registration"
+                       style="-fx-font-size: 16; -fx-text-fill: #64ffda; -fx-font-weight: bold;"/>
+            </VBox>
+
+            <!-- Registration Form -->
+            <VBox spacing="12" alignment="CENTER_LEFT" style="-fx-padding: 20 0 0 0;">
+                <!-- Personal Information -->
+                <Label text="PERSONAL INFORMATION" style="-fx-text-fill: #64ffda; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 0 0 5 0;"/>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <VBox spacing="8">
+                        <Label text="First Name *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                        <TextField fx:id="firstNameField" promptText="Enter first name"
+                                   style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 200;"/>
+                    </VBox>
+                    <VBox spacing="8">
+                        <Label text="Last Name *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                        <TextField fx:id="lastNameField" promptText="Enter last name"
+                                   style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 200;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Customer ID Section -->
+                <VBox spacing="8">
+                    <Label text="Customer ID *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <TextField fx:id="customerIdField" promptText="Auto-generated"
+                                   style="-fx-background-color: #f0f0f0; -fx-text-fill: #666; -fx-pref-width: 200;"
+                                   editable="false"/>
+                        <Button text="Generate New ID" onAction="#handleGenerateNewId"
+                                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 11; -fx-pref-height: 35; -fx-pref-width: 120;"/>
+                    </HBox>
+                </VBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <VBox spacing="8">
+                        <Label text="Phone Number *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                        <TextField fx:id="phoneField" promptText="Enter phone number"
+                                   style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 200;"/>
+                    </VBox>
+                    <VBox spacing="8">
+                        <!-- Empty space to maintain layout -->
+                        <Label text=" " style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                        <Label text=" " style="-fx-pref-height: 35;"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Contact Information -->
+                <Label text="CONTACT INFORMATION" style="-fx-text-fill: #64ffda; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 15 0 5 0;"/>
+
+                <VBox spacing="8">
+                    <Label text="Email Address *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                    <TextField fx:id="emailField" promptText="Enter email address"
+                               style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 410;"/>
+                </VBox>
+
+                <VBox spacing="8">
+                    <Label text="Address *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                    <TextField fx:id="addressField" promptText="Enter physical address"
+                               style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 410;"/>
+                </VBox>
+
+                <!-- Account Security -->
+                <Label text="ACCOUNT SECURITY" style="-fx-text-fill: #64ffda; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 15 0 5 0;"/>
+
+                <VBox spacing="8">
+                    <Label text="Password *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                    <PasswordField fx:id="passwordField" promptText="Create password"
+                                   style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 410;"/>
+                </VBox>
+
+                <VBox spacing="8">
+                    <Label text="Confirm Password *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                    <PasswordField fx:id="confirmPasswordField" promptText="Confirm password"
+                                   style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 410;"/>
+                </VBox>
+
+                <!-- Customer Type -->
+                <Label text="CUSTOMER TYPE" style="-fx-text-fill: #64ffda; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 15 0 5 0;"/>
+
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <RadioButton fx:id="individualRadio" text="Individual" selected="true"
+                                 style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                    <RadioButton fx:id="businessRadio" text="Business"
+                                 style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                </HBox>
+
+                <!-- Additional fields for business customers -->
+                <VBox fx:id="businessFields" spacing="8" visible="false" style="-fx-padding: 10 0 0 0;">
+                    <Label text="BUSINESS INFORMATION" style="-fx-text-fill: #64ffda; -fx-font-size: 12; -fx-font-weight: bold;"/>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <VBox spacing="8">
+                            <Label text="Business Name *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                            <TextField fx:id="businessNameField" promptText="Enter business name"
+                                       style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 200;"/>
+                        </VBox>
+                        <VBox spacing="8">
+                            <Label text="Registration Number *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                            <TextField fx:id="regNumberField" promptText="Enter registration number"
+                                       style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 200;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <!-- Buttons -->
+            <HBox spacing="15" alignment="CENTER" style="-fx-padding: 25 0 0 0;">
+                <Button text="REGISTER" onAction="#handleRegister"
+                        style="-fx-background-color: linear-gradient(to right, #00d4ff, #0077ff); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-pref-width: 120; -fx-pref-height: 40; -fx-effect: dropshadow(gaussian, rgba(0,212,255,0.4), 10, 0.3, 0, 2);"/>
+
+                <Button text="BACK TO LOGIN" onAction="#handleBackToLogin"
+                        style="-fx-background-color: transparent; -fx-text-fill: #64ffda; -fx-border-color: #64ffda; -fx-border-width: 2; -fx-border-radius: 25; -fx-font-weight: bold; -fx-pref-width: 120; -fx-pref-height: 40;"/>
+            </HBox>
+
+            <!-- Footer note -->
+            <Label text="* Required fields • Customer ID is auto-generated"
+                   style="-fx-text-fill: #888; -fx-font-size: 10; -fx-padding: 15 0 0 0;"/>
+
+        </VBox>
+    </ScrollPane>
+
+</AnchorPane>
