@@ -1,0 +1,62 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="TransferController" spacing="15" alignment="TOP_CENTER"
+      prefWidth="450" prefHeight="400"
+      style="-fx-background-color: linear-gradient(to bottom right, #0f0f23, #1a1a2e, #16213e); -fx-padding: 20; -fx-border-color: #00d4ff; -fx-border-width: 1; -fx-border-radius: 10;">
+
+    <!-- Header -->
+    <Label fx:id="titleLabel" text="Transfer Funds"
+           style="-fx-text-fill: #00d4ff; -fx-font-size: 20; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0,212,255,0.3), 10, 0.5, 0, 0);"/>
+
+    <!-- Transfer Form -->
+    <VBox spacing="12" style="-fx-background-color: rgba(255,255,255,0.05); -fx-background-radius: 10; -fx-padding: 15; -fx-border-color: #00d4ff; -fx-border-width: 1; -fx-border-radius: 10;">
+
+        <!-- From Account -->
+        <Label text="From Account:" style="-fx-text-fill: #64ffda; -fx-font-weight: bold;"/>
+        <Label fx:id="fromAccountLabel" text="-" style="-fx-text-fill: white; -fx-font-size: 14;"/>
+
+        <!-- To Account -->
+        <Label text="To Account Number:" style="-fx-text-fill: #64ffda; -fx-font-weight: bold; -fx-padding: 10 0 0 0;"/>
+        <TextField fx:id="toAccountField" promptText="Enter destination account number"
+                   style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35;"/>
+
+        <!-- Amount -->
+        <Label text="Amount (P):" style="-fx-text-fill: #64ffda; -fx-font-weight: bold; -fx-padding: 10 0 0 0;"/>
+        <TextField fx:id="amountField" promptText="0.00"
+                   style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35;"/>
+
+        <!-- Description -->
+        <Label text="Description:" style="-fx-text-fill: #64ffda; -fx-font-weight: bold; -fx-padding: 10 0 0 0;"/>
+        <TextField fx:id="descriptionField" promptText="Optional transfer description"
+                   style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35;"/>
+
+        <!-- Status Message -->
+        <Label fx:id="statusLabel" text="" style="-fx-text-fill: #ff6b6b; -fx-font-size: 12; -fx-padding: 5 0 0 0;" visible="false"/>
+    </VBox>
+
+    <!-- Buttons -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Transfer" onAction="#handleTransfer" fx:id="transferBtn"
+                style="-fx-background-color: linear-gradient(to right, #00d4ff, #0077ff); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 15; -fx-pref-width: 120; -fx-pref-height: 35; -fx-effect: dropshadow(gaussian, rgba(0,212,255,0.4), 10, 0.3, 0, 2);"/>
+        <Button text="Back" onAction="#handleBack"
+                style="-fx-background-color: transparent; -fx-text-fill: #64ffda; -fx-border-color: #64ffda; -fx-border-width: 1; -fx-border-radius: 15; -fx-font-weight: bold; -fx-pref-width: 80; -fx-pref-height: 35;"/>
+    </HBox>
+
+    <!-- Recent Transfers -->
+    <TitledPane text="Recent Transfers" expanded="false"
+                style="-fx-text-fill: #00d4ff; -fx-font-weight: bold; -fx-font-size: 13; -fx-background-color: transparent;"
+    >
+        <TableView fx:id="recentTransfersTable" prefHeight="120">
+            <columns>
+                <TableColumn text="Date" prefWidth="100"/>
+                <TableColumn text="To Account" prefWidth="120"/>
+                <TableColumn text="Amount" prefWidth="80"/>
+                <TableColumn text="Description" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </TitledPane>
+</VBox>

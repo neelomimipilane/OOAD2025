@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="OpenAccountController"
+            style="-fx-background-color: linear-gradient(to bottom right, #0f0f23, #1a1a2e, #16213e);">
+
+    <VBox spacing="20" alignment="CENTER"
+          AnchorPane.topAnchor="30.0" AnchorPane.bottomAnchor="30.0"
+          AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0"
+          style="-fx-background-color: rgba(255,255,255,0.05); -fx-background-radius: 15; -fx-padding: 30; -fx-border-color: #00d4ff; -fx-border-width: 1; -fx-border-radius: 15;">
+
+        <!-- Header -->
+        <VBox spacing="8" alignment="CENTER">
+            <Label text="Open New Account"
+                   style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #00d4ff; -fx-effect: dropshadow(gaussian, rgba(0,212,255,0.3), 10, 0.5, 0, 0);"/>
+
+            <Label fx:id="titleLabel" text="Create a New Bank Account"
+                   style="-fx-font-size: 14; -fx-text-fill: #64ffda;"/>
+        </VBox>
+
+        <!-- Account Type Selection -->
+        <VBox spacing="12" alignment="CENTER_LEFT" style="-fx-padding: 20 0 0 0;">
+            <Label text="ACCOUNT TYPE *" style="-fx-text-fill: #64ffda; -fx-font-size: 12; -fx-font-weight: bold;"/>
+
+            <ComboBox fx:id="accountTypeCombo" promptText="Select Account Type"
+                      style="
+                        -fx-background-color: rgba(251,251,251,0.6);
+                        -fx-text-fill: white;
+                        -fx-prompt-text-fill: #888;
+                        -fx-border-color: #00d4ff;
+                        -fx-border-width: 0 0 1 0;
+                        -fx-background-radius: 5;
+                        -fx-pref-height: 35;
+                        -fx-pref-width: 300;
+                      "/>
+        </VBox>
+
+        <!-- Account Details -->
+        <VBox spacing="12" alignment="CENTER_LEFT" style="-fx-padding: 15 0 0 0;">
+            <Label text="ACCOUNT DETAILS" style="-fx-text-fill: #64ffda; -fx-font-size: 12; -fx-font-weight: bold;"/>
+
+            <VBox spacing="8">
+                <Label text="Account Number *" style="-fx-text-fill: white; -fx-font-size: 11;"/>
+                <TextField fx:id="accountNumberField" promptText="Enter account number"
+                           style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-border-color: #00d4ff; -fx-border-width: 0 0 1 0; -fx-background-radius: 5; -fx-pref-height: 35; -fx-pref-width: 300;"/>
+            </VBox>
+        </VBox>
+
+        <!-- Dynamic Fields Container -->
+        <VBox fx:id="dynamicFieldsContainer" spacing="12" alignment="CENTER_LEFT" style="-fx-padding: 15 0 0 0;">
+            <!-- Fields will be added here dynamically based on account type -->
+        </VBox>
+
+        <!-- Account Features -->
+        <VBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding: 15 0 0 0;">
+            <Label text="ACCOUNT FEATURES" style="-fx-text-fill: #00d4ff; -fx-font-size: 12; -fx-font-weight: bold;"/>
+
+            <VBox spacing="5" style="-fx-padding: 5 0 0 10;">
+                <Label fx:id="featuresLabel" text="Select an account type to view features"
+                       style="-fx-text-fill: #64ffda; -fx-font-size: 11; -fx-wrap-text: true;"
+                       prefWidth="350"/>
+            </VBox>
+        </VBox>
+
+        <!-- Message Label -->
+        <Label fx:id="messageLabel" style="-fx-text-fill: #ff6b6b; -fx-font-size: 11; -fx-wrap-text: true;"
+               prefWidth="350" visible="false"/>
+
+        <!-- Buttons -->
+        <HBox spacing="15" alignment="CENTER" style="-fx-padding: 25 0 0 0;">
+            <Button text="CREATE ACCOUNT" onAction="#handleCreateAccount"
+                    style="-fx-background-color: linear-gradient(to right, #00d4ff, #0077ff); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-pref-width: 140; -fx-pref-height: 40; -fx-effect: dropshadow(gaussian, rgba(0,212,255,0.4), 10, 0.3, 0, 2);"/>
+
+            <Button text="BACK" onAction="#handleBack"
+                    style="-fx-background-color: transparent; -fx-text-fill: #64ffda; -fx-border-color: #64ffda; -fx-border-width: 2; -fx-border-radius: 25; -fx-font-weight: bold; -fx-pref-width: 100; -fx-pref-height: 40;"/>
+        </HBox>
+
+        <!-- Footer note -->
+        <Label text="* Required fields • All accounts subject to approval"
+               style="-fx-text-fill: #888; -fx-font-size: 10; -fx-padding: 15 0 0 0;"/>
+
+    </VBox>
+
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="AccountsViewController" spacing="15" alignment="TOP_CENTER"
+      prefWidth="600" prefHeight="400"
+      style="-fx-background-color: linear-gradient(to bottom right, #097a6d, #030b10, #14e17d); -fx-padding: 20;">
+
+    <!-- Header -->
+    <Label text="All Accounts"
+           style="-fx-text-fill: #00d4ff; -fx-font-size: 24; -fx-font-weight: bold;"/>
+
+    <!-- Accounts Table -->
+    <TableView fx:id="accountsTable" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="accountNumberColumn" text="Account Number" prefWidth="150"/>
+            <TableColumn fx:id="accountTypeColumn" text="Account Type" prefWidth="120"/>
+            <TableColumn fx:id="balanceColumn" text="Balance" prefWidth="100"/>
+            <TableColumn fx:id="interestRateColumn" text="Interest Rate" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <!-- Close Button -->
+    <Button text="Close" onAction="#handleClose"
+            style="-fx-background-color: transparent; -fx-text-fill: #64ffda; -fx-border-color: #64ffda; -fx-border-width: 1; -fx-border-radius: 15; -fx-font-weight: bold; -fx-pref-width: 100; -fx-pref-height: 35;"/>
+</VBox>

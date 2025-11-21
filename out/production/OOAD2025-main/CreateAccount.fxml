@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="CreateAccountController"
+      spacing="10" alignment="CENTER" padding="20">
+
+    <Label text="Create Account" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Account Type:"/>
+        <ChoiceBox fx:id="accountTypeChoice" prefWidth="150"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Account Number:"/>
+        <TextField fx:id="accountNumberField" prefWidth="150"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" fx:id="initialDepositBox" visible="false">
+        <Label text="Initial Deposit:"/>
+        <TextField fx:id="initialDepositField" prefWidth="150"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" fx:id="employerBox" visible="false">
+        <Label text="Employer Name:"/>
+        <TextField fx:id="employerNameField" prefWidth="150"/>
+        <Label text="Employer Address:"/>
+        <TextField fx:id="employerAddressField" prefWidth="150"/>
+    </HBox>
+
+    <Button text="Create" onAction="#handleCreate"/>
+    <Label fx:id="messageLabel" textFill="red"/>
+</VBox>
+

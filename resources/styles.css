@@ -1,0 +1,41 @@
+/* styles.css */
+
+.styled-combo-box {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #888;
+    -fx-border-color: #4d8b93;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 5;
+}
+
+.styled-combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(26,26,46,0.95);
+}
+
+.styled-combo-box .list-cell:filled:selected {
+    -fx-text-fill: white;
+    -fx-background-color: #35767e;
+}
+
+.styled-combo-box .list-cell:filled:hover {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(0,212,255,0.3);
+}
+
+.styled-combo-box .list-view {
+    -fx-background-color: rgba(41, 41, 165, 0.95);
+    -fx-border-color: #1b4750;
+    -fx-background-radius: 5;
+}
+
+/* For the displayed value in the combo box */
+.styled-combo-box .text {
+    -fx-fill: white;
+}
+
+/* ComboBox arrow button */
+.styled-combo-box .arrow {
+    -fx-background-color: #274343;
+}
